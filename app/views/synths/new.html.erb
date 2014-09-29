@@ -1,0 +1,13 @@
+<h1>Add a new synth:</h1>
+<%= form_for(@synth) do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :type_of %>:
+  <%= f.select :type_of, Synth::SYNTH_TYPES %><br />
+
+  <%= f.label :synth_creator %>:
+  <%= f.collection_select :synth_creator_id, SynthCreator.all, :id, :name %><br />
+
+  <%= f.submit %>
+<% end %>

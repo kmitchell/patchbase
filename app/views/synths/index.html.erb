@@ -1,0 +1,15 @@
+<h1>Synths:</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Creator</th>
+  </tr>
+  <%= @synths.each do |synth| %>
+    <tr>
+      <td><%= synth.name %></td>
+      <td><%= synth.type_of %></td>
+      <td><a href="<%= synth_creator_url(synth.synth_creator) %>"><%= synth.synth_creator.name %></a></td>
+    </tr>
+  <% end %>
+</table>

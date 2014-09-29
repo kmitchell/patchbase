@@ -1,0 +1,10 @@
+<h1>Add a new synth creator:</h1>
+<%= form_for(@synth_creator) do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :website %>:
+  <%= f.url_field :website %><br />
+
+  <%= f.submit %>
+<% end %>

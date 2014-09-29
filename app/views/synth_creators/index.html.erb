@@ -1,0 +1,7 @@
+<h1>Synth Creators:</h1>
+<%= @synth_creators.each do |creator| %>
+  <p>
+    <b><%= creator.name.titleize %></b>
+    (<a href="<%= creator.website %>"><%= creator.website %></a>)
+  </p>
+<% end %>

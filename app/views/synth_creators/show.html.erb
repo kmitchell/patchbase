@@ -1,0 +1,21 @@
+<h1><%= @synth_creator.name %></h1>
+<p>website: <a href="<%= @synth_creator.website %>"><%= @synth_creator.website %></a></p>
+
+<% if @synth_creator.synths.any? %>
+  <p>synths:</p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+      </tr>
+      <%= @synth_creator.synths.each do |synth| %>
+        <tr>
+          <td><%= synth.name %></td>
+          <td><%= synth.type_of %></td>
+        </tr>
+      <% end %>
+    </table>
+  </p>
+<% else %>
+  <p>This creator doesn't have any synths listed yet.</p>
+<% end %>

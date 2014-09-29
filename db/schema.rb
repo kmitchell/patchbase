@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929054113) do
+ActiveRecord::Schema.define(version: 20140929065200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "synth_creators", force: true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "synths", force: true do |t|
+    t.integer  "synth_creator_id"
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "real_name"
